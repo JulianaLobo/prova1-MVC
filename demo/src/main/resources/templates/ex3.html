@@ -6,7 +6,7 @@
   <body>
   <h1>Thymeleaf fragments</h1>
   
-  <div id="bannerElement">
+  <div th:fragment="banner" id="bannerElement">
     <img alt="Thymeleaf logo" />
   <div>
   
@@ -22,7 +22,7 @@
       <dd th:text="${product.availableFrom}">28-Jun-2013</dd>
     </dl>
     
-    <!-- Incluir o banner aqui -->
+    <div th:insert=”~{banner}”></div>
     
     <h2>Customer information</h2>
     <dl>
@@ -42,6 +42,6 @@
       <dd th:text="'$' + ${customer.balance}">$350</dd>
     </dl>
     
-    <!-- Incluir o banner aqui -->
+    <div th:insert=”~{banner}”></div>
   </body>
 </html>

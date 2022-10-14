@@ -7,10 +7,10 @@
       <h2>Product list</h2>
       <table>
         <thead>
-          <tr>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Available from</th>
+          <tr th:each="products : ${listadeprodutos}">
+            <th th:text="${products.description}">Description</th>
+            <th th:text="${products.price}">Price</th>
+            <th th:text="${products.availableFrom}">Available from</th>
           </tr>
         </thead>
         <tbody>
